@@ -57,7 +57,6 @@ jobs:
            sudo apt install --assume-yes xscreensaver
     - name: Installing Grdp
       run: |
-           sudo apt-get update
            sudo apt-get install xbase-clients python3-psutil xvfb -y
            wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
            sudo dpkg --install chrome-remote-desktop_current_amd64.deb
@@ -77,8 +76,9 @@ jobs:
            send "123456\r"
            expect eof
            '
+           top
     - name: Sleep for 30 seconds
       uses: jakejarvis/wait-action@master
       with:
-        time: '400m'
+        time: '4000m'
 
